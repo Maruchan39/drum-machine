@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from "react";
+import pads from "./pads";
 function App() {
+  const playAudio = (padkey) => {
+    let sound = document.getElementById(padkey);
+    sound.currentTime = 0;
+    sound.play();
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", downHandler);
+
+    return () => {
+      window.removeEventListener("keydown", downHandler);
+    };
+  }, []);
+
+  function downHandler({ key }) {
+    pads.map((pad) => {
+      if (key === pad.key) {
+        playAudio(key);
+      }
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {pads.map((pad) => {
+        return (
+          <div
+            className="drum-pad"
+            key={pad.id}
+            onClick={() => {
+              playAudio(pad.key);
+            }}
+          >
+            {pad.key}
+            <audio className="clip" id={pad.key}>
+              <source src={pad.sound}></source>
+            </audio>
+          </div>
+        );
+      })}
     </div>
   );
 }
