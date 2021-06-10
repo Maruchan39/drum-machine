@@ -1,47 +1,13 @@
-import React, { useEffect } from "react";
-import pads from "./pads";
+import React, {useState} from "react";
+import Instrument from "./Instrument";
+import Display from "./Display";
 function App() {
-  const playAudio = (padkey) => {
-    let sound = document.getElementById(padkey);
-    sound.currentTime = 0;
-    sound.play();
-  };
-
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler);
-
-    return () => {
-      window.removeEventListener("keydown", downHandler);
-    };
-  }, []);
-
-  function downHandler({ key }) {
-    pads.map((pad) => {
-      if (key === pad.key) {
-        playAudio(key);
-      }
-    });
-  }
-
+  const [soundPlayed, setSoundPlayed] = useState("");
   return (
-    <div>
-      {pads.map((pad) => {
-        return (
-          <div
-            className="drum-pad"
-            key={pad.id}
-            onClick={() => {
-              playAudio(pad.key);
-            }}
-          >
-            {pad.key}
-            <audio className="clip" id={pad.key}>
-              <source src={pad.sound}></source>
-            </audio>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <Instrument setSoundPlayed={setSoundPlayed} />
+      <Display soundPlayed={soundPlayed} />
+    </>
   );
 }
 
