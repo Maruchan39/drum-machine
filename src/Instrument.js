@@ -21,7 +21,7 @@ function Instrument({setSoundPlayed}) {
         pads.map((pad) => {
           if (key === pad.key) {
             playAudio(key);
-            setSoundPlayed(pad.sound);
+            setSoundPlayed(pad.chord);
           }
         });
       }
