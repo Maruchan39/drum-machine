@@ -4,10 +4,10 @@ import Display from "./Display";
 function App() {
   const [soundPlayed, setSoundPlayed] = useState("");
   return (
-    <>
+    <div id="drum-machine">
       <Instrument setSoundPlayed={setSoundPlayed} />
       <Display soundPlayed={soundPlayed} />
-    </>
+    </div>
   );
 }
 
