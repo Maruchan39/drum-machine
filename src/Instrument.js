@@ -18,8 +18,8 @@ function Instrument({ setSoundPlayed }) {
 
   function downHandler({ key }) {
     pads.map((pad) => {
-      if (key === pad.key) {
-        playAudio(key);
+      if (key.toUpperCase() === pad.key) {
+        playAudio(key.toUpperCase());
         setSoundPlayed(pad.chord);
       }
     });
@@ -29,7 +29,7 @@ function Instrument({ setSoundPlayed }) {
     <div>
       {pads.map((pad) => {
         return (
-          <div
+          <div id={pad.chord}
             className="drum-pad"
             key={pad.id}
             onClick={() => {
@@ -37,9 +37,8 @@ function Instrument({ setSoundPlayed }) {
               setSoundPlayed(pad.id);
             }}
           >
-            {pad.key}
-            <audio className="clip" id={pad.key}>
-              <source src={pad.sound}></source>
+            {pad.key.toUpperCase()}
+            <audio className="clip" id={pad.key} src={pad.sound}>
             </audio>
           </div>
         );

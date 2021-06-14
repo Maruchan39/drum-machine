@@ -1,55 +1,55 @@
 const pads = [
   {
     id: 0,
-    key: "q",
+    key: "Q",
     sound: "Am.m4a",
     chord: "Amin11"
   },
   {
     id: 1,
-    key: "w",
+    key: "W",
     sound: "Bm.m4a",
     chord: "Bmin11"
   },
   {
     id: 2,
-    key: "e",
+    key: "E",
     sound: "CMaj.m4a",
     chord: "Cmaj7#11"
   },
   {
     id: 3,
-    key: "a",
+    key: "A",
     sound: "D7.m4a",
     chord: "D7add11"
   },
   {
     id: 4,
-    key: "s",
+    key: "S",
     sound: "Em.m4a",
     chord: "Emin11"
   },
   {
     id: 5,
-    key: "d",
+    key: "D",
     sound: "FMaj.m4a",
     chord: "Fmaj7"
   },
   {
     id: 6,
-    key: "z",
+    key: "Z",
     sound: "G6.m4a",
     chord: "Gmaj6"
   },
   {
     id: 7,
-    key: "x",
+    key: "X",
     sound: "Am9.m4a",
     chord: "Amin9"
   },
   {
     id: 8,
-    key: "c",
+    key: "C",
     sound: "D Harmonics.m4a",
     chord: "D Harmonics"
   },
