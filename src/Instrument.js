@@ -26,7 +26,7 @@ function Instrument({ setSoundPlayed }) {
   }
 
   return (
-    <div>
+    <div id="instrument"> 
       {pads.map((pad) => {
         return (
           <div id={pad.chord}
@@ -34,11 +34,11 @@ function Instrument({ setSoundPlayed }) {
             key={pad.id}
             onClick={() => {
               playAudio(pad.key);
-              setSoundPlayed(pad.id);
+              setSoundPlayed(pad.chord);
             }}
           >
             {pad.key.toUpperCase()}
-            <audio className="clip" id={pad.key} src={pad.sound}>
+            <audio className="clip" id={pad.key} src={pad.sound} preload="auto">
             </audio>
           </div>
         );

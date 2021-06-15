@@ -1,0 +1,31 @@
+#drum-machine {
+  display: grid;
+  grid-template-areas:
+    "instrument instrument instrument"
+    "instrument instrument instrument "
+    "instrument instrument instrument "
+    "display display display";
+  grid-template-columns: 20% 20% 20%;
+  /* grid-auto-rows: minmax(10rem, auto); */
+  grid-auto-rows: 20% 20% 20% 20%;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+#instrument {
+  grid-area: instrument;
+  grid-template-columns: 33% 34% 33%;
+  grid-auto-rows: minmax(33%, auto);
+  display: grid;
+  border-style: solid;
+}
+
+#display {
+  grid-area: display;
+  border-style: solid;
+}
+
+.drum-pad {
+  border-style: solid;
+}
