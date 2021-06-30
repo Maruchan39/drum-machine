@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   color: #eeeeee;
-  font-size: 3vh;
+  font-size: 0vh;
   cursor:pointer;
 }
 
@@ -34,6 +34,7 @@
 
   .drum-pad {
     color: black;
+    font-size: 3vh;
   }
 
   #display {
