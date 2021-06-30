@@ -26,7 +26,9 @@ function Instrument({ setSoundPlayed }) {
   }
 
   return (
-    <div id="instrument"> 
+
+
+    <div id="instrument">
       {pads.map((pad) => {
         return (
           <div id={pad.chord}

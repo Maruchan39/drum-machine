@@ -1,31 +1,31 @@
 #drum-machine {
-  display: grid;
-  grid-template-areas:
-    "instrument instrument instrument"
-    "instrument instrument instrument "
-    "instrument instrument instrument "
-    "display display display";
-  grid-template-columns: 20% 20% 20%;
-  /* grid-auto-rows: minmax(10rem, auto); */
-  grid-auto-rows: 20% 20% 20% 20%;
-  justify-content: center;
-  align-content: center;
-  height: 100vh;
 }
 
 #instrument {
-  grid-area: instrument;
-  grid-template-columns: 33% 34% 33%;
-  grid-auto-rows: minmax(33%, auto);
+  margin: 25% 1% 1% 1%;
+  height: 50vh;
   display: grid;
-  border-style: solid;
-}
-
-#display {
-  grid-area: display;
-  border-style: solid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 3px;
 }
 
 .drum-pad {
-  border-style: solid;
+  background-color: #eeeeee;
+}
+
+#display {
+  margin: 0% 1% 1% 1%;
+  height: 25vh;
+  background-color: #a6a6a6;
+}
+
+@media (min-width: 600px) {
+  #instrument {
+    margin: 5% 15% 1% 15%;
+  }
+
+  #display {
+    margin: 0% 15% 1% 15%
+  }
 }

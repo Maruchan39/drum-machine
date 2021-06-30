@@ -1,11 +1,12 @@
 import React, {useState} from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Instrument from "./Instrument";
 import Display from "./Display";
 import "./index.css";
 function App() {
   const [soundPlayed, setSoundPlayed] = useState("");
   return (
-    <div id="drum-machine" className="container-fluid">
+    <div id="drum-machine">
       <Instrument setSoundPlayed={setSoundPlayed} />
       <Display soundPlayed={soundPlayed} />
     </div>
