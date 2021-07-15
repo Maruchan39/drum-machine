@@ -14,7 +14,7 @@
   justify-content: center;
   color: #eeeeee;
   font-size: 0vh;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #display {
@@ -46,4 +46,8 @@
   .drum-pad {
     color: #eeeeee;
   }
+}
+
+.clicked {
+  background-color: #cfe0f0;
 }

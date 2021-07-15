@@ -7,7 +7,7 @@ function App() {
   const [soundPlayed, setSoundPlayed] = useState("");
   return (
     <div id="drum-machine">
-      <Instrument setSoundPlayed={setSoundPlayed} />
+      <Instrument setSoundPlayed={setSoundPlayed} soundPlayed={soundPlayed}/>
       <Display soundPlayed={soundPlayed} />
     </div>
   );
